@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>VideoWidget.qml</file>
+        <file>image/fakePlayer.jpg</file>
+        <file>image/buttons/back.png</file>
+        <file>image/buttons/forward.png</file>
+        <file>image/buttons/next.png</file>
+        <file>image/buttons/play.png</file>
+        <file>image/buttons/prev.png</file>
+        <file>image/buttons/raw.png</file>
+        <file>MidToolbar.qml</file>
+        <file>LeftToolbar.qml</file>
+        <file>RightToolbar.qml</file>
+        <file>VolumeWidget.qml</file>
+        <file>SliderBar.qml</file>
+    </qresource>
+</RCC>
