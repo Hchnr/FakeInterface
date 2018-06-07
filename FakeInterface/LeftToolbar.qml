@@ -3,20 +3,31 @@ import QtQuick.Layouts 1.3
 import QtQuick.Controls 1.4
 
 ToolBar{
+    height: parent.height
     RowLayout{
+        height: parent.height
         ToolButton {
-            iconSource: "image/buttons/back.png"
+            scale: 0.5
+            iconSource: "image/buttons/tv.png"
         }
         ToolButton {
-            iconSource: "image/buttons/prev.png"
+            scale: 0.5
+            height: 16
+            width: 16
+            iconSource: "image/buttons/messages.png"
         }
         ToolButton {
-            iconSource: "image/buttons/play.png"
+            scale: 0.5
+            height: 16
+            width: 16
+            iconSource: "image/buttons/shuffle_on.png"
         }
         ToolButton {
-            iconSource: "image/buttons/next.png"
+            scale: 0.5
+            height: 16
+            width: 16
+            iconSource: "image/buttons/repeat_all.png"
         }
-
     }
 
 }

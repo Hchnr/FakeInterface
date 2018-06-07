@@ -6,13 +6,25 @@ ToolBar{
     RowLayout{
 
         ToolButton {
-            iconSource: "image/buttons/play.png"
+            scale: 0.5
+            iconSource: "image/buttons/renderer.png"
+            onClicked: {
+                if (fakePlayer.isFullScreen){
+                    fakePlayer.showNormal()
+             }
+                else {
+                    fakePlayer.showFullScreen()
+                }
+                fakePlayer.isFullScreen = !fakePlayer.isFullScreen
+            }
         }
         ToolButton {
-            iconSource: "image/buttons/next.png"
+            scale: 0.5
+            iconSource: "image/buttons/playlist.png"
         }
         ToolButton {
-            iconSource: "image/buttons/forward.png"
+            scale: 0.5
+            iconSource: "image/buttons/stop.png"
         }
     }
 

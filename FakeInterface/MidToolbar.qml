@@ -5,19 +5,27 @@ import QtQuick.Controls 1.4
 ToolBar{
     RowLayout{
         ToolButton {
-            iconSource: "image/buttons/back.png"
+            scale: 0.5
+            iconSource: "image/buttons/slower.png"
         }
         ToolButton {
-            iconSource: "image/buttons/prev.png"
+            scale: 0.5
+            iconSource: "image/buttons/dvd_prev.png"
         }
         ToolButton {
+            scale: 0.5
             iconSource: "image/buttons/play.png"
+            onClicked: {
+                iconSource = "image/buttons/stop.png"
+            }
         }
         ToolButton {
-            iconSource: "image/buttons/next.png"
+            scale: 0.5
+            iconSource: "image/buttons/dvd_next.png"
         }
         ToolButton {
-            iconSource: "image/buttons/forward.png"
+            scale: 0.5
+            iconSource: "image/buttons/faster.png"
         }
     }
 

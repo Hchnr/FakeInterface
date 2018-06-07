@@ -83,6 +83,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_input_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_kms_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_linuxaccessibility_support_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_multimedia.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_multimediawidgets.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_network.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_network_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_opengl.pri \
@@ -177,6 +179,8 @@ Makefile: ../FakeInterface/FakeInterface.pro /usr/lib/x86_64-linux-gnu/qt5/mkspe
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_input_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_kms_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_linuxaccessibility_support_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_multimedia.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_multimediawidgets.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_network.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_network_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_opengl.pri \
@@ -267,6 +271,8 @@ Makefile: ../FakeInterface/FakeInterface.pro /usr/lib/x86_64-linux-gnu/qt5/mkspe
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_input_support_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_kms_support_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_linuxaccessibility_support_private.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_multimedia.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_multimediawidgets.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_network.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_network_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_opengl.pri:
@@ -371,20 +377,33 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_qml.cpp
 qrc_qml.cpp: ../FakeInterface/qml.qrc \
 		/usr/lib/qt5/bin/rcc \
+		../FakeInterface/SmallButton.qml \
 		../FakeInterface/LeftToolbar.qml \
 		../FakeInterface/SliderBar.qml \
 		../FakeInterface/VideoWidget.qml \
 		../FakeInterface/MidToolbar.qml \
 		../FakeInterface/RightToolbar.qml \
-		../FakeInterface/VolumeWidget.qml \
 		../FakeInterface/main.qml \
 		../FakeInterface/image/fakePlayer.jpg \
+		../FakeInterface/image/buttons/dvd_prev.png \
+		../FakeInterface/image/buttons/pause.png \
+		../FakeInterface/image/buttons/volume-high.png \
 		../FakeInterface/image/buttons/play.png \
-		../FakeInterface/image/buttons/forward.png \
+		../FakeInterface/image/buttons/renderer.png \
+		../FakeInterface/image/buttons/volume-low.png \
+		../FakeInterface/image/buttons/faster.png \
+		../FakeInterface/image/buttons/messages.png \
+		../FakeInterface/image/buttons/volume-muted.png \
+		../FakeInterface/image/buttons/previous.png \
+		../FakeInterface/image/buttons/volume-medium.png \
+		../FakeInterface/image/buttons/tv.png \
+		../FakeInterface/image/buttons/dvd_next.png \
+		../FakeInterface/image/buttons/shuffle_on.png \
 		../FakeInterface/image/buttons/next.png \
-		../FakeInterface/image/buttons/raw.png \
-		../FakeInterface/image/buttons/back.png \
-		../FakeInterface/image/buttons/prev.png
+		../FakeInterface/image/buttons/slower.png \
+		../FakeInterface/image/buttons/repeat_all.png \
+		../FakeInterface/image/buttons/playlist.png \
+		../FakeInterface/image/buttons/stop.png
 	/usr/lib/qt5/bin/rcc -name qml ../FakeInterface/qml.qrc -o qrc_qml.cpp
 
 compiler_moc_predefs_make_all: moc_predefs.h

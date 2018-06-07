@@ -3,16 +3,28 @@
         <file>main.qml</file>
         <file>VideoWidget.qml</file>
         <file>image/fakePlayer.jpg</file>
-        <file>image/buttons/back.png</file>
-        <file>image/buttons/forward.png</file>
         <file>image/buttons/next.png</file>
         <file>image/buttons/play.png</file>
-        <file>image/buttons/prev.png</file>
-        <file>image/buttons/raw.png</file>
         <file>MidToolbar.qml</file>
         <file>LeftToolbar.qml</file>
         <file>RightToolbar.qml</file>
-        <file>VolumeWidget.qml</file>
         <file>SliderBar.qml</file>
+        <file>image/buttons/dvd_next.png</file>
+        <file>image/buttons/dvd_prev.png</file>
+        <file>image/buttons/faster.png</file>
+        <file>image/buttons/pause.png</file>
+        <file>image/buttons/previous.png</file>
+        <file>image/buttons/renderer.png</file>
+        <file>image/buttons/repeat_all.png</file>
+        <file>image/buttons/shuffle_on.png</file>
+        <file>image/buttons/slower.png</file>
+        <file>image/buttons/stop.png</file>
+        <file>image/buttons/tv.png</file>
+        <file>image/buttons/volume-high.png</file>
+        <file>image/buttons/volume-low.png</file>
+        <file>image/buttons/volume-medium.png</file>
+        <file>image/buttons/volume-muted.png</file>
+        <file>image/buttons/playlist.png</file>
+        <file>image/buttons/messages.png</file>
     </qresource>
 </RCC>

@@ -8,16 +8,47 @@ Window {
     visible: true
     width: 1000
     height: 960
+    minimumWidth: 900
     title: qsTr("A Fake Interface")
+
+    property bool isFullScreen: false
+    property bool isToolbarVisible: true
+    property var initHeight: 960
+
     Column{
         VideoWidget{
-            id:screen
+
+            id:videoWidget
             color:"black"
             width:fakePlayer.width
             height: fakePlayer.height-60
+/*
+            MouseArea{
+                anchors.fill: parent
+                onPositionChanged: {
+                        toolBar.visible = true
+                        videoWidget.height = initHeight-60
+                        mouseTimer.restart()
+                        fakePlayer.alert("still for 5s.")
+                    }
+
+                Timer{
+                    id: mouseTimer
+                    interval: 3000;
+                    repeat: true;
+                    running: true;
+                    onTriggered: {
+                        toolBar.visible = false
+                        videoWidget.height = initHeight-10
+                        mouseTimer.stop()
+                    }
+                }
+            }
+            */
         }
 
         SliderBar{
+            id: sliderBar
             width:fakePlayer.width
             height: 10
             value: 0
@@ -36,6 +67,7 @@ Window {
             }
         }
         RowLayout{
+            id: toolBar
             width:fakePlayer.width
             height: 50
             LeftToolbar{
@@ -46,8 +78,15 @@ Window {
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 
-            SliderBar{
+            RowLayout {
                 anchors.right: parent.right
+                SliderBar{
+                    anchors.right: rightToolbar.left
+                }
+                RightToolbar{
+                    id: rightToolbar
+                    anchors.right: parent.right
+                }
             }
         }
     }
