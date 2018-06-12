@@ -3,30 +3,17 @@ import QtQuick.Layouts 1.3
 import QtQuick.Controls 1.4
 
 ToolBar{
+    height: parent.height
     RowLayout{
-        ToolButton {
-            scale: 0.5
-            iconSource: "image/buttons/slower.png"
-        }
-        ToolButton {
-            scale: 0.5
-            iconSource: "image/buttons/dvd_prev.png"
-        }
-        ToolButton {
-            scale: 0.5
-            iconSource: "image/buttons/play.png"
-            onClicked: {
-                iconSource = "image/buttons/stop.png"
+        height: parent.height
+        Repeater {
+            model: centerList
+            delegate: ToolButton {
+                // Text { text: model.modelData.widgetName }
+                iconSource: fakePlayer.getIconFromName(model.modelData.widgetName)
             }
         }
-        ToolButton {
-            scale: 0.5
-            iconSource: "image/buttons/dvd_next.png"
-        }
-        ToolButton {
-            scale: 0.5
-            iconSource: "image/buttons/faster.png"
-        }
     }
-
 }
+
+

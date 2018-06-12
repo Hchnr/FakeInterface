@@ -3,29 +3,16 @@ import QtQuick.Layouts 1.3
 import QtQuick.Controls 1.4
 
 ToolBar{
+    height: parent.height
     RowLayout{
-
-        ToolButton {
-            scale: 0.5
-            iconSource: "image/buttons/renderer.png"
-            onClicked: {
-                if (fakePlayer.isFullScreen){
-                    fakePlayer.showNormal()
-             }
-                else {
-                    fakePlayer.showFullScreen()
-                }
-                fakePlayer.isFullScreen = !fakePlayer.isFullScreen
+        height: parent.height
+        Repeater {
+            model: rightList
+            delegate: ToolButton {
+                // Text { text: model.modelData.widgetName }
+                iconSource: fakePlayer.getIconFromName(model.modelData.widgetName)
             }
         }
-        ToolButton {
-            scale: 0.5
-            iconSource: "image/buttons/playlist.png"
-        }
-        ToolButton {
-            scale: 0.5
-            iconSource: "image/buttons/stop.png"
-        }
     }
-
 }
+

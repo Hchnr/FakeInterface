@@ -15,36 +15,31 @@ Window {
     property bool isToolbarVisible: true
     property var initHeight: 960
 
+    // get the icon path of widgets
+    function getIconFromName(name) {
+        var m = {"Bookmark": "image/buttons-svg/tv.svg",
+              "Chat": "image/buttons-svg/messages.svg",
+              "Random": "image/buttons-svg/shuffle_on.svg",
+              "Loop": "image/buttons-svg/repeat_all.svg",
+              "Slower": "image/buttons-svg/slower.svg",
+              "Previous": "image/buttons-svg/dvd_prev.svg",
+              "Play": "image/buttons-svg/play.svg",
+              "Next": "image/buttons-svg/dvd_next.svg",
+              "Faster": "image/buttons-svg/faster.svg",
+              "Fullscreen": "image/buttons-svg/renderer.svg",
+              "Playlist": "image/buttons-svg/playlist.svg",
+              "TBD": "image/buttons-svg/stop.svg"
+
+        }
+        return m[name]
+    }
+
     Column{
         VideoWidget{
-
             id:videoWidget
             color:"black"
             width:fakePlayer.width
             height: fakePlayer.height-60
-/*
-            MouseArea{
-                anchors.fill: parent
-                onPositionChanged: {
-                        toolBar.visible = true
-                        videoWidget.height = initHeight-60
-                        mouseTimer.restart()
-                        fakePlayer.alert("still for 5s.")
-                    }
-
-                Timer{
-                    id: mouseTimer
-                    interval: 3000;
-                    repeat: true;
-                    running: true;
-                    onTriggered: {
-                        toolBar.visible = false
-                        videoWidget.height = initHeight-10
-                        mouseTimer.stop()
-                    }
-                }
-            }
-            */
         }
 
         SliderBar{
@@ -74,7 +69,7 @@ Window {
                 anchors.left: parent.left
             }
 
-            MidToolbar{
+            CenterToolbar{
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 
