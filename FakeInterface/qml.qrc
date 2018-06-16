@@ -46,5 +46,7 @@
         <file>image/buttons-svg/volume-low.svg</file>
         <file>image/buttons-svg/volume-medium.svg</file>
         <file>image/buttons-svg/volume-muted.svg</file>
+        <file>Subtitle.qml</file>
+        <file>SubtitleMenu.qml</file>
     </qresource>
 </RCC>

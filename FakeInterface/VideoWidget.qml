@@ -1,7 +1,6 @@
 import QtQuick 2.0
 
 Rectangle{
-
     Image{
         id:img
         source: "./image/fakePlayer.jpg"
@@ -23,8 +22,6 @@ Rectangle{
                         console.log("moved.")
                     }
                 }
-
-
             }
         }
         Timer{
@@ -40,5 +37,9 @@ Rectangle{
                 }
             }
         }
+    }
+    Subtitle {
+        height: 80
+        width: parent.width-40
     }
 }

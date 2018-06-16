@@ -21,6 +21,19 @@ Item {
                                 + mousearea.drag.minimumX);
     }
 
+    Timer{
+        interval: 1000;
+        repeat: true;
+        running: true;
+        onTriggered: {
+            if(parent.value < 0.991){
+                parent.setValue(parent.value+=0.01)
+            }else{
+                // stop();
+            }
+        }
+    }
+
     Rectangle{
         id: foo
         width: parent.width - 8
@@ -67,6 +80,9 @@ Item {
                 drag.minimumX: -handle.width / 2;
                 drag.maximumX: foo.width - handle.width / 2;
                 property real value: (handle.x - drag.minimumX) / (drag.maximumX - drag.minimumX)
+                onReleased: {
+                    slider.value = (handle.x - drag.minimumX) / (drag.maximumX - drag.minimumX)
+                }
             }
         }
     }

@@ -1,6 +1,6 @@
 import QtQuick 2.8
 import QtQuick.Window 2.2
-import QtQuick.Controls 1.4
+import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.3
 
 Window {
@@ -18,7 +18,7 @@ Window {
     // get the icon path of widgets
     function getIconFromName(name) {
         var m = {"Bookmark": "image/buttons-svg/tv.svg",
-              "Chat": "image/buttons-svg/messages.svg",
+              "Subtitle": "image/buttons-svg/messages.svg",
               "Random": "image/buttons-svg/shuffle_on.svg",
               "Loop": "image/buttons-svg/repeat_all.svg",
               "Slower": "image/buttons-svg/slower.svg",
@@ -29,7 +29,6 @@ Window {
               "Fullscreen": "image/buttons-svg/renderer.svg",
               "Playlist": "image/buttons-svg/playlist.svg",
               "TBD": "image/buttons-svg/stop.svg"
-
         }
         return m[name]
     }
@@ -48,18 +47,6 @@ Window {
             height: 10
             value: 0
             init : 0
-            Timer{
-                interval: 1000;
-                repeat: true;
-                running: true;
-                onTriggered: {
-                    if(parent.value < 0.991){
-                        parent.setValue(parent.value+=0.01)
-                    }else{
-                        // stop();
-                    }
-                }
-            }
         }
         RowLayout{
             id: toolBar

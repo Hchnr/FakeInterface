@@ -1,6 +1,6 @@
 import QtQuick 2.0
 import QtQuick.Layouts 1.3
-import QtQuick.Controls 1.4
+import QtQuick.Controls 2.0
 
 ToolBar{
     height: parent.height
@@ -9,8 +9,21 @@ ToolBar{
         Repeater {
             model: leftList
             delegate: ToolButton {
-                // Text { text: model.modelData.widgetName }
-                iconSource: fakePlayer.getIconFromName(model.modelData.widgetName)
+                Image {
+                    source: fakePlayer.getIconFromName(model.modelData.widgetName)
+                }
+
+                SubtitleMenu {
+                    id: subtitleMenu
+                    y: 110
+                }
+                onClicked: {
+                    console.log(model.modelData.widgetName + " clicked.")
+                    if (model.modelData.widgetName === "Subtitle" ) {
+                        // console.log("subtile options:")
+                        subtitleMenu.open()
+                    }
+                }
             }
         }
     }
