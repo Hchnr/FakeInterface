@@ -17,7 +17,15 @@ Menu {
             onClicked: {
                 console.log(name + " clicked.")
                 if (name === "English" ) {
+                    videoWidget.subtitleText.chosen = videoWidget.subtitleText.en
                 }
+                else if(name === "Chinese") {
+                    videoWidget.subtitleText.chosen = videoWidget.subtitleText.zh
+                }
+                else if(name === "France") {
+                    videoWidget.subtitleText.chosen = videoWidget.subtitleText.fr
+                }
+
             }
         }
     }

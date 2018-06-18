@@ -3,17 +3,20 @@ import QtQuick.Window 2.2
 import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.3
 
+import "qrc:///Toolbar/"
+
 Window {
     id: fakePlayer
     visible: true
     width: 1000
     height: 960
-    minimumWidth: 900
+    minimumWidth: 700
     title: qsTr("A Fake Interface")
 
     property bool isFullScreen: false
     property bool isToolbarVisible: true
-    property var initHeight: 960
+    property bool isPlay: false
+    property int initHeight: 960
 
     // get the icon path of widgets
     function getIconFromName(name) {
@@ -28,48 +31,32 @@ Window {
               "Faster": "image/buttons-svg/faster.svg",
               "Fullscreen": "image/buttons-svg/renderer.svg",
               "Playlist": "image/buttons-svg/playlist.svg",
-              "TBD": "image/buttons-svg/stop.svg"
+              "TBD": "image/buttons-svg/stop.svg",
+              "Stop": "image/buttons-svg/stop.svg",
         }
         return m[name]
     }
 
-    Column{
-        VideoWidget{
-            id:videoWidget
-            color:"black"
-            width:fakePlayer.width
-            height: fakePlayer.height-60
-        }
+    color: "black"
+    VideoWidget{
+        id:videoWidget
+        anchors.fill: parent
+    }
 
-        SliderBar{
-            id: sliderBar
-            width:fakePlayer.width
-            height: 10
-            value: 0
-            init : 0
-        }
-        RowLayout{
-            id: toolBar
-            width:fakePlayer.width
-            height: 50
-            LeftToolbar{
-                anchors.left: parent.left
-            }
+    BottomToolbar {
+        id: bottomBar
+        anchors.bottom: parent.bottom
+        color: "white"
+    }
 
-            CenterToolbar{
-                anchors.horizontalCenter: parent.horizontalCenter
-            }
-
-            RowLayout {
-                anchors.right: parent.right
-                SliderBar{
-                    anchors.right: rightToolbar.left
-                }
-                RightToolbar{
-                    id: rightToolbar
-                    anchors.right: parent.right
-                }
-            }
+    function togglePlay() {
+        bottomBar.toolBar.centerToolbar
+        if (fakePlayer.isPlay) {
+            image.source = fakePlayer.getIconFromName("Stop")
         }
+        else {
+            image.source = fakePlayer.getIconFromName("Play")
+        }
+        fakePlayer.isPlay = !fakePlayer.isPlay;
     }
 }
